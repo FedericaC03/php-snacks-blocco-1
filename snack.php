@@ -10,10 +10,9 @@ Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” 
 $name = $_GET['name'];
 $email = $_GET['email'];
 $age = $_GET['age'];
-$number = 3;
 $messaggio = "";
 
-if (!empty($_GET['email'])) {  // se non è vuota
+if ((!empty($_GET['email'])) || (!empty($_GET['name'])) || (!empty($_GET['age'])) ){  // se non è vuota
 
   if ((strpos($email, ".") != false && strpos($email, "@") != false ) && (intval($age)) && (strlen($name) >= 3) )
   {
@@ -21,7 +20,6 @@ if (!empty($_GET['email'])) {  // se non è vuota
   } else {
     $messaggio = "Accesso negato";
   }
-
 } else {  //se è vuoto
   $messaggio = "ti sei dimenticato di passare le credenziali";
 }

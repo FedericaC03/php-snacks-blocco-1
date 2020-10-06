@@ -5,43 +5,31 @@ Olimpia Milano - Cantù | 55-60 -->
 <?php
 
 $matches = [
-  "First match" => [
+  [
     "home" => "monaco",
     "visitor" => "barcelona",
-    "score" => "86|60"
+    "score_home" => 86,
+    "score_visitor" => 60
   ],
 
-  "Second match" => [
+  [
     "home" => "roma",
     "visitor" => "venezia",
-    "score" => "72|74"
+    "score_home" => 72,
+    "score_visitor" => 74
 
   ],
 
-  "Third match" => [
+  [
     "home" => "sassari",
     "visitor" => "trieste",
-    "score" => "92|102"
+    "score_home" => 92,
+    "score_visitor" => 102
 
   ],
 ];
-
-$total_matches = array_merge($matches);
-
-var_dump($total_matches);
-
+echo "<h1>Elenco partite di oggi: </h1>";
+for ($i=0; $i < count($matches) ; $i++) {
+  echo $matches[$i]["home"]." - ".$matches[$i]["visitor"]. " | ".$matches[$i]["score_home"]."-".$matches[$i]["score_visitor"]."<br>";
+}
  ?>
-
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>backet</title>
-
-  </head>
-  <body>
-    <h1>
-       <?php echo $total_matches["First match"]; ?>
-     </h1>
-  </body>
-</html>
